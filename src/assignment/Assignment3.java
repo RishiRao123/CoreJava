@@ -183,5 +183,112 @@ public class Assignment3 {
 		}
 		System.out.println();
 	}
+	
+	private boolean isPrimeNumber(int num) {
+	    if (num <= 1) {
+	        return false;
+	    }
+	    if (num == 2) {
+	        return true;
+	    }
+	    if (num % 2 == 0) {
+	        return false;
+	    }
 
+	    for (int i = 3; i * i <= num; i += 2) {
+	        if (num % i == 0) {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	
+	public void primenumberElements(int[] arr, int n) {
+		System.out.print("primenumber elements in array are: ");
+		for(int i=0; i<n; i++) {
+			if(isPrimeNumber(arr[i]))
+				System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+	
+//	public boolean isArrPalindrome(int[] arr, int n) {
+//		
+//	}
+	
+	public void printArray(int[] arr, int n) {
+	    for (int i = 0; i < n; i++) {
+	        System.out.print(arr[i] + " ");
+	    }
+	    System.out.println();
+	}
+	
+	private void printArrayNew(int[] arr, int n) {
+	    for (int i = 0; i < n; i++) {
+	        System.out.print(arr[i] + " ");
+	    }
+	    System.out.println();
+	}
+
+	public int[] copyArray(int[] arr, int n) {
+	    int[] ans = new int[n];
+	    for (int i = 0; i < n; i++) {
+	        ans[i] = arr[i];
+	    }
+	    return ans;
+	}
+	
+	public void insertAtIdx(int[] arr, int n, int pos, int x) {
+		if(pos < 0 || pos > n) {
+			System.out.println("Invalid index or position");
+			return;
+		}
+			
+		int[] ans = new int[n+1];
+		for(int i=0; i<=pos-1; i++) {
+			ans[i] = arr[i];
+		}
+		ans[pos] = x;
+		for(int i=pos; i<n; i++) {
+			ans[i+1] = arr[i];
+		}
+		printArrayNew(ans, ans.length);
+	}
+	
+	public int[] reversedArray(int[] arr, int n) {
+		int[] reversed = new int[n];
+		int j = 0;
+		for(int i=n-1; i>=0; i--) {
+			reversed[j] = arr[i];
+			j++;
+		}
+		return reversed;
+	}
+	
+	public int largestElement(int[] arr, int n) {
+		int ans = arr[0];
+		for(int i=0; i<n; i++) {
+			if(arr[i] > ans) {
+				ans = arr[i];
+			}
+		}
+		return ans;
+	}
+	
+	public int secondLargest(int[] arr, int n) {
+	    int largest = Integer.MIN_VALUE;
+	    int second = Integer.MIN_VALUE;
+		
+		for(int i=0; i<n; i++) {
+			if(arr[i] > largest) {
+				second = largest;
+				largest = arr[i];
+			}
+			
+			if(arr[i] > second && arr[i] != largest) {
+				second = arr[i];
+			}
+		}
+		return second;
+	}
 }

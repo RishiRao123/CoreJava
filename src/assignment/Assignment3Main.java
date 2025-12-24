@@ -23,6 +23,23 @@ public class Assignment3Main {
 		asg.allArmstrongNumbers(arr, n);
 		asg.palindromeElements(arr, n);
 		
+		asg.primenumberElements(arr, n);
+		asg.copyArray(arr, n);
+		int[] copiedArray = asg.copyArray(arr, n);
+		System.out.print("Previous array: ");
+		asg.printArray(arr, n);
+		System.out.print("New copied array: ");
+		asg.printArray(copiedArray, n);
+		System.out.print("array before insertion: ");
+		asg.printArray(arr, n);
+		System.out.print("array after insertion: ");
+		asg.insertAtIdx(arr, n, 3, 100);
+		System.out.print("array before revrsing: ");
+		asg.printArray(arr, n);
+		System.out.print("array after revrsing: ");
+		asg.printArray(asg.reversedArray(arr, n), n);
+		System.out.println("largest element in array is: " + asg.largestElement(arr, n));
+		System.out.println("second largest element in array is: " + asg.secondLargest(arr, n));
 	}
 
 }
