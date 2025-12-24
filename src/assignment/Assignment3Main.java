@@ -26,8 +26,8 @@ public class Assignment3Main {
 		System.out.println("armstrong numbers in arr is: " + asg.armstrongNumber(arr, n));
 		asg.allArmstrongNumbers(arr, n);
 		asg.palindromeElements(arr, n);
-		
 		asg.primenumberElements(arr, n);
+		System.out.println("Is array palindrome: " + asg.isArrPalindrome(arr, n));
 		asg.copyArray(arr, n);
 		int[] copiedArray = asg.copyArray(arr, n);
 		System.out.print("Previous array: ");

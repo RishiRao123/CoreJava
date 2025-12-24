@@ -96,24 +96,30 @@ public class Assignment3 {
 	}
 	
 	public int avgOfEvenElements(int[] arr, int n) {
-		int sum = sumOfEvenElements(arr, n);
-		int numberOfDigits = 0;
-		for(int num : arr) {
-			if(num % 2 == 0)
-				numberOfDigits++;
-		}
-		int avg = sum / numberOfDigits;
-		return avg;
+	    int sum = 0;
+	    int count = 0; 
+
+	    for (int num : arr) {
+	        if (num % 2 == 0) {
+	            sum += num;
+	            count++;
+	        }
+	    }
+
+	    if (count == 0) {
+	        System.out.println("No even elements in the array.");
+	        return 0; 
+	    }
+
+	    return sum / count; 
 	}
+
 	
 	public int diffOfEvenAndOddSum(int[] arr, int n) {
 		int oddSum = sumOfOddElements(arr, n);
 		int evenSum = sumOfEvenElements(arr, n);
 		int ans =  evenSum - oddSum;
-		if(ans < 0)
-			return -2*ans + ans;
-		
-		return ans;
+		return Math.abs(ans);
 	}
 	private int noOfDigits(int num) {
 	    if (num == 0)
@@ -212,9 +218,18 @@ public class Assignment3 {
 		System.out.println();
 	}
 	
-//	public boolean isArrPalindrome(int[] arr, int n) {
-//		
-//	}
+	public boolean isArrPalindrome(int[] arr, int n) {
+		int start = 0;
+		int end = n-1;
+		
+		while(start<end) {
+			if(arr[start] != arr[end])
+				return false;
+			start++;
+			end--;
+		}
+		return true;
+	}
 	
 	public void printArray(int[] arr, int n) {
 	    for (int i = 0; i < n; i++) {
