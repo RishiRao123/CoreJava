@@ -2,7 +2,7 @@ package encapsulation;
 
 class BankAccount {
 	private String accountNumber;
-	private String accountHoldername;
+	private String accountHolderName;
 	private double balance;
 
 	{
@@ -11,9 +11,18 @@ class BankAccount {
 
 	BankAccount(String accountNumber, String accountHolderName) {
 		this.accountNumber = accountNumber;
-		this.accountHoldername = accountHolderName;
+		this.accountHolderName = accountHolderName;
+	}
+	
+	public String getAccountNumber() {
+	    return accountNumber;
 	}
 
+	public String getAccountHolderName() {
+	    return accountHolderName;
+	}
+
+	
 	public void deposit(double amount) {
 		if (amount > 0) {
 			balance += amount;
@@ -33,6 +42,13 @@ class BankAccount {
 	public double getBalance() {
 		return balance;
 	}
+	
+	public void displayDetails() {
+	    System.out.println("Account Number: " + accountNumber);
+	    System.out.println("Account Holder: " + accountHolderName);
+	    System.out.println("Balance: " + balance);
+	}
+
 
 }
 
@@ -42,6 +58,7 @@ public class Main2 {
 		b1.deposit(5000);
 		b1.withdraw(2000);
 		b1.withdraw(4000);
-		System.out.println(b1.getBalance());
+		b1.displayDetails();
+		
 	}
 }
