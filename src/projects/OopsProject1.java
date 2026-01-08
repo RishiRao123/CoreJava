@@ -90,7 +90,7 @@ class VehicleService {
 }
 
 
-public class OopsProject {
+public class OopsProject1 {
 
 	public static void main(String[] args) {
 		

@@ -77,7 +77,7 @@ class Dog extends Mammal {
 	}
 }
 
-// 5.
+// 4.
 class Shape {
 	void draw() {
 		System.out.println("Draw from shape");
@@ -95,6 +95,132 @@ class Rectangle extends Shape {
 	@Override
 	void draw() {
 		System.out.println("Draw from rectangle");
+	}
+}
+
+// 5.
+class Bank {
+	void getInterestRate() {
+		System.out.println("Bank class , Interest rate");
+	}
+}
+
+class SBI extends Bank {
+	@Override
+	void getInterestRate() {
+		System.out.println("SBI class, Interest Rate");
+	}
+}
+
+class HDFC extends Bank {
+	@Override
+	void getInterestRate() {
+		System.out.println("HDFC class, Interest Rate");
+	}
+}
+
+// 6.
+class Employee {
+	String name;
+	double salary;
+	
+	Employee(String name, double salary) {
+		this.name = name;
+		this.salary = salary;
+	}
+}
+
+class Manager extends Employee {
+	String department;
+	
+	Manager(String name, double salary, String department) {
+		super(name, salary);
+		this.department = department;
+	}
+	
+	public void displayDetails() {
+		System.out.println("Name: " + name + " Salary: " + salary + " Department: " + department);
+	}
+}
+
+// 7.
+class Account {
+	String accountNo;
+	
+	Account(String accountNo) {
+		this.accountNo = accountNo;
+	}
+}
+
+class SavingsAccount extends Account {
+	double interestRate;
+	
+	SavingsAccount(String accountNo, double interestRate) {
+		super(accountNo);
+		this.interestRate = interestRate;
+	}
+	
+	void displayDetails() {
+		System.out.println("Account No: " + accountNo + " Interest Rate: " + interestRate);
+	}
+}
+
+// 8.
+class Animal1 {
+	protected boolean isCarnivore;
+	
+	Animal1(boolean isCarnivore) {
+		this.isCarnivore = isCarnivore;
+	}
+}
+
+class Dog1 extends Animal1 {
+	Dog1(boolean isCarnivore) {
+		super(isCarnivore);
+	}
+	
+	void getType() {
+		System.out.println("Animal is Carnivore: " + isCarnivore);
+	}
+}
+
+// 9.
+class Calculator {
+	void add(int a, int b) {
+		int sum = a+b;
+		System.out.println("Sum is: " + sum);
+	}
+}
+
+class AdvanceCalculator extends Calculator {
+	public void multiply(int a, int b) {
+		int ans = a * b;
+		System.out.println("Multiplication ans is: " + ans);
+	}
+}
+
+class Person1 {
+	String name;
+	int age;
+	
+	Person1(String name, int age) {
+		this.name = name;
+		this.age =age;
+	}
+}
+
+class Teacher extends Person1 {
+	String subject;
+	double salary;
+	
+	Teacher(String name, int age, String subject, double salary) {
+		super(name, age);
+		this.subject = subject;
+		this.salary = salary;
+	}
+	
+	void displayDetails() {
+		System.out.println("Name: " + name + " Age: " + age + " Subject: "  + subject + " Salary: " + salary);
 	}
 }
 
@@ -116,7 +242,28 @@ public class Assignment5 {
 //		cl1.draw();
 //		Rectangle r1 = new Rectangle();
 //		r1.draw();
-
+		
+//		SBI sbi = new SBI();
+//		HDFC hdfc = new HDFC();
+//		sbi.getInterestRate();
+//		hdfc.getInterestRate();
+		
+//		Manager m1 = new Manager("Rishi rao", 75000.00, "Development");
+//		m1.displayDetails();
+		
+//		SavingsAccount sa = new SavingsAccount("IDBI64146", 0.075);
+//		sa.displayDetails();
+		
+//		Dog1 dg1 = new Dog1(true);
+//		dg1.getType();
+		
+//		AdvanceCalculator ac = new AdvanceCalculator();
+//		ac.add(525, 250);
+//		ac.multiply(56, 2);
+		
+		Teacher t1 = new Teacher("Rishi rao", 25, "Java", 78560.52);
+		t1.displayDetails();
+		
 	}
 
 }
