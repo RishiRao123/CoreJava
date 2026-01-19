@@ -4,6 +4,9 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
+// Comparator is a separate interface used to define multiple different ways to compare objects.
+// Method to implement: compare(T o1, T o2)'
+
 public class ComparatorDemo {
 
 	public static void main(String[] args) {

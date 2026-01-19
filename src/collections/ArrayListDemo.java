@@ -44,7 +44,7 @@ public class ArrayListDemo {
 		// similarly we can do for set and map.
 		System.out.println("list : " + l2);
 		
-
+		// remove(Object obj), remove(idx), removeAll(), retainAll(), clear()
 
 	}
 
