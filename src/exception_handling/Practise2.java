@@ -1,5 +1,9 @@
 package exception_handling;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 // Task 1
 
 class UserNameValidationException extends RuntimeException {
@@ -58,8 +62,8 @@ class InsufficientBalanceException extends RuntimeException {
 }
 
 class BankAccount {
-	int accountId;
-	double balance;
+	private int accountId;
+	private double balance;
 
 	BankAccount(int accountId, double balance) {
 		this.accountId = accountId;
@@ -77,6 +81,25 @@ class BankAccount {
 		System.out.println("Withdrawal successful. Remaining balance: " + balance);
 	}
 
+}
+
+class FileProcessingException extends RuntimeException {
+    public FileProcessingException(String filePath, Throwable cause) {
+        super("Error processing file at path: " + filePath, cause);
+    }
+}
+
+class FileProcessor {
+    public void processFile(String filePath) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            throw new FileProcessingException(filePath, e);
+        }
+    }
 }
 
 public class Practise2 {
@@ -102,6 +125,10 @@ public class Practise2 {
 		} catch (InsufficientBalanceException e) {
 			System.out.println("Balnce is not sufficient. " + e.getMessage());
 		}
+		
+		// 3.
+		FileProcessor fp1 = new FileProcessor();
+		
 	}
 
 }
