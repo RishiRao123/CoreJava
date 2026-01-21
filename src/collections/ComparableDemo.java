@@ -43,13 +43,13 @@ class Book implements Comparable<Book> {
 	int id;
 	String title;
 	double price;
-	
+
 	Book(int id, String title, double price) {
 		this.id = id;
 		this.title = title;
 		this.price = price;
 	}
-	
+
 	@Override
 	public int compareTo(Book b) {
 		return (int) (this.price - b.price);
@@ -83,19 +83,25 @@ public class ComparableDemo {
 			Product p = itr1.next();
 			System.out.println("Product: " + p.name + " Price: " + p.price);
 		}
-		
+
 		List<Book> book = new ArrayList<>();
 		book.add(new Book(1, "GOT", 222));
 		book.add(new Book(2, "Money", 200));
 
 		Collections.sort(book);
-		
+//		When you call:
+//		Collections.sort(list);
+//		Java internally does something like:
+//		compare(s1, s2)
+//		compare(s2, s3)
+//		compare(s1, s3)
+
 		Iterator<Book> itr2 = book.iterator();
-		while(itr2.hasNext()) {
+		while (itr2.hasNext()) {
 			Book b = itr2.next();
 			System.out.println("ID:" + b.id + " Title: " + b.title + " Price: " + b.price);
 		}
-
+		
 
 	}
 

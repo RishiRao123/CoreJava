@@ -64,7 +64,6 @@ public class ObjectClassDemo1 {
 		for(Student s : students) {
 			System.out.println(s);
 		}
-//	ok object class understood, Explain its methods, use case and where it is used practically for a java developer. Give solid examples for all methods along with usecase and tasks for me to evaluvate understanding and boost my confidence
 
 	}
 
