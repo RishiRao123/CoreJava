@@ -1,4 +1,4 @@
-package m1_type_questions;
+package model_type_questions;
 
 import java.util.Scanner;
 import java.time.Year;
